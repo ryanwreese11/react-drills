@@ -8,15 +8,13 @@ export class Array extends Component {
     this.state = {
         userInput: '',
         arr: ['apples', 'oranges', 'chair', 'light pole', 'cow'],
-        filteredArr: []
+        
     }
 
   }
 
-  displayArray(){
-      let display = this.state.arr.map((value) => <h2> {value} </h2>)
-      return display
-  }
+
+  
 
   handleChange(value){
       this.setState({
@@ -26,8 +24,8 @@ export class Array extends Component {
   
   filterArray = () => {
       let filter = this.state.arr.filter(val => {
-      return val.startsWith(this.state.userInput)
-      }).map(val2 => <h2>{val2}</h2>)
+      return val.includes(this.state.userInput)
+      }).map(val => <h2>{val}</h2>)
       return filter
   }
   
